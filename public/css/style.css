@@ -5,7 +5,7 @@ body{
 blockquote{
 	background-color: #3498db;
 	padding: .5em 0;
-    text-emphasis: italic;
+    	text-emphasis: italic;
 	text-align:center;
 	color:#FFFFFF;
 }
@@ -13,12 +13,18 @@ blockquote{
 
 h1, p, h2, h3{
 	margin:0;
-    text-align: center;
+    	text-align: center;
 	padding:0;
 }
 
 img{
- margin:10% auto;
-    display: block;
-    border: thin solid; 
+    	margin:10% auto;
+    	display: block;
+    	border: thin solid; 
+}
+
+header{
+    color: blue;
+    background: #FFC04C;
+    padding: 1em 0;
 }

@@ -3,6 +3,9 @@ require 'sinatra'
 
 class MyWebApp < Sinatra::Base
   get '/' do
-    send_file "views/index1.html"
+    erb :index
+  end
+  get '/about' do
+    erb :about
   end
 end
