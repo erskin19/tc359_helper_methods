@@ -1,9 +1,24 @@
-<h2>US Holidays in <%=Date::MONTHNAMES[@time.month]%> of <%= @time.year %></h2>
-<% @holidays.each do |holiday| %>
-  <h3><%= holiday[0]["name"] %> - <%= holiday[0]["date"][8..-1] %></h3>
-<% end %>
-
-<h2>US Holidays in July of 1994</h2>
-<% @birthHolidays.each do |holiday| %>
-  <h3><%= holiday[0]["name"] %> - <%= holiday[0]["date"][8..-1] %></h3>
+<form>
+  <div class="col-xs-6">
+    <label for="country">Country</label></br>
+    <label for="year">Year</label></br>
+    <label for="Month">Month</label></br>
+  </div>
+  <div class="col-xs-6">
+    <input type="text" id="country" name="country" value="<%= params[:country] %>"></br>
+    <input type="number" id="year" name="year" value="<%= params[:year] %>"></br>
+    <input type="number" id="month" name="month" value="<%= params[:month] %>"></br>
+  </div>
+  <div class="col-xs-12">
+    <input type="submit" value="Search for Holidays">
+  </div>
+</form>
+</br></br>
+<% if @holidays != nil and @holidays.any? %>
+  <h2>Displaying searched Holidays</h2>
+  <% @holidays.each do |holiday| %>
+    <h3><%= holiday[0]["name"] %> on <%= holiday[0]["date"] %></h3>
+  <% end %>
+<% else %>
+  <h2>No Search Results</h2>
 <% end %>

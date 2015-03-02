@@ -4,9 +4,13 @@ require 'date'
 
 class MyWebApp < Sinatra::Base
   get '/' do
-	@time = Time.now
-    @holidays = HolidApi.get(country: 'us', year: @time.year, month: @time.month)
-    @birthHolidays = HolidApi.get(country: 'us', year: '1994', month: '7')
+    if params != nil and params.any?
+	  begin
+        @holidays = HolidApi.get(country: params['country'], year: params['year'], month: params['month'])
+      rescue
+        @holidays = []
+      end
+    end
     erb :index
   end
 end

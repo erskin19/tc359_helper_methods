@@ -2,7 +2,6 @@ body{
 	background-color:#d0d0f1;
 }
 
-
 h1, p, h2, h3{
 	margin:0;
     text-align: center;
@@ -29,4 +28,10 @@ header{
     color: #d0d0f1;
     background: #F84242;
     padding: 1em 0;
+}
+
+form{
+    margin:auto;
+    display:block;
+    text-align: center;
 }
