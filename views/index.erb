@@ -5,9 +5,9 @@
     <label for="Month">Month</label></br>
   </div>
   <div class="col-xs-6">
-    <input type="text" id="country" name="country" value="<%= params[:country] %>"></br>
-    <input type="number" id="year" name="year" value="<%= params[:year] %>"></br>
-    <input type="number" id="month" name="month" value="<%= params[:month] %>"></br>
+    <input type="text" id="country" name="country" value="<%= params[:country] %>" required></br>
+    <input type="number" id="year" name="year" value="<%= params[:year] %>" required></br>
+    <input type="number" id="month" name="month" value="<%= params[:month] %>" required></br>
   </div>
   <div class="col-xs-12">
     <input type="submit" value="Search for Holidays">
