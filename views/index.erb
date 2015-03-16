@@ -1,24 +1,11 @@
-<form>
-  <div class="col-xs-6">
-    <label for="country">Country</label></br>
-    <label for="year">Year</label></br>
-    <label for="Month">Month</label></br>
-  </div>
-  <div class="col-xs-6">
-    <input type="text" id="country" name="country" value="<%= params[:country] %>" required></br>
-    <input type="number" id="year" name="year" value="<%= params[:year] %>" required></br>
-    <input type="number" id="month" name="month" value="<%= params[:month] %>" required></br>
-  </div>
-  <div class="col-xs-12">
-    <input type="submit" value="Search for Holidays">
-  </div>
-</form>
-</br></br>
-<% if @holidays != nil and @holidays.any? %>
-  <h2>Displaying searched Holidays</h2>
-  <% @holidays.each do |holiday| %>
-    <h3><%= holiday[0]["name"] %> on <%= holiday[0]["date"] %></h3>
-  <% end %>
-<% else %>
-  <h2>No Search Results</h2>
-<% end %>
+<%= bootstrap_alert "<strong>Warning! Warning!</strong> It looks like it's <strong>#{current_date_and_time}</strong>!", 'warning' %>
+
+<section class="jumbotron text-center">
+  <p>You know what time that is?</p>
+  <h1>It's... CAT GIF TIME!</h1>
+
+  <figure>
+    <%= image_tag @cat_image.url, 'CAT GIF!' %>
+    <figcaption>Source: <a href="<%= @cat_image.source_url %>"><%= @cat_image.source_url %></a></figcaption>
+  </figure>
+</section>
